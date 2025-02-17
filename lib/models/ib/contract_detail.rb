@@ -77,7 +77,7 @@ module IB
 
     #LIKUO EDIT
       #validates_format_of :time_zone, :with => /\A\w{3}\z/, :message => 'should be XXX'
-      serialize :sec_id_list, Array
+      serialize :sec_id_list, coder: ActiveRecord::Coders::YAMLColumn.new(Array)
     #LIKUO EDIT
 
 

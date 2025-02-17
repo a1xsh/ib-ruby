@@ -293,7 +293,7 @@ module IB
   #  serialize :algo_params, Hash
    # serialize :combo_params
  #   serialize :soft_dollar_tier_params, HashWithIndifferentAccess
-    serialize :mics_options, Hash
+    serialize :mics_options, coder: ActiveRecord::Coders::YAMLColumn.new(Hash)
 
     # Order is always placed for a contract. Here, we explicitly set this link.
     belongs_to :contract, optional: true
